@@ -1,0 +1,322 @@
+[
+  {
+    "section_id": "executive_summary",
+    "title": "Executive Summary",
+    "category": "core",
+    "description": "Concise, stakeholder-friendly overview of the project, proposed POC, and expected business outcome.",
+    "purpose": "Provide decision-makers with a high-level summary of the POC value and direction.",
+    "selection_rules": {
+      "include_when": ["Always included by default as the lead section in a POC proposal."],
+      "exclude_when": ["Only when producing an abbreviated technical appendix or supplementary note."],
+      "priority": "high"
+    },
+    "required_information": ["business_problem", "proposed_solution", "expected_outcome"],
+    "optional_information": ["target_timeline", "sponsor_organization"],
+    "writing_guidelines": {
+      "tone": "executive, confident, and professional",
+      "detail_level": "concise",
+      "instructions": [
+        "Synthesize the client problem and explain the proposed approach in 2 to 3 paragraphs.",
+        "Highlight the primary technical capability being validated.",
+        "State the expected business outcome without inventing unverified ROI metrics."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "exec_overview",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Summarize the business context and the overarching POC goal."
+      },
+      {
+        "block_id": "exec_highlights",
+        "type": "bulleted_list",
+        "required": true,
+        "purpose": "Bullet points highlighting core deliverables and outcomes."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default"
+    },
+    "ordering": {
+      "preferred_after": [],
+      "preferred_before": ["business_need", "poc_objectives"]
+    },
+    "tags": ["core", "overview", "executive"]
+  },
+  {
+    "section_id": "business_need",
+    "title": "Current Challenges & Business Need",
+    "category": "core",
+    "description": "Details the operational challenges, pain points, and business motivations necessitating the POC.",
+    "purpose": "Establish the problem baseline that the proposed solution aims to resolve.",
+    "selection_rules": {
+      "include_when": ["Client has documented pain points, bottlenecks, or legacy constraints."],
+      "exclude_when": ["Purely speculative research projects with no immediate business problem."],
+      "priority": "high"
+    },
+    "required_information": ["current_state", "pain_points"],
+    "optional_information": ["cost_of_inaction", "impacted_stakeholders"],
+    "writing_guidelines": {
+      "tone": "objective and analytical",
+      "detail_level": "detailed",
+      "instructions": [
+        "Describe the current operational state and specific bottlenecks.",
+        "Distinguish confirmed factual pain points from inferred challenges.",
+        "Focus on technical limitations impacting the business."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "challenges_narrative",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Detailed narrative of existing challenges."
+      },
+      {
+        "block_id": "pain_points_list",
+        "type": "bulleted_list",
+        "required": true,
+        "purpose": "Key operational and technical pain points."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default"
+    },
+    "ordering": {
+      "preferred_after": ["executive_summary"],
+      "preferred_before": ["poc_objectives"]
+    },
+    "tags": ["core", "business", "problem"]
+  },
+  {
+    "section_id": "poc_objectives",
+    "title": "POC Objectives",
+    "category": "core",
+    "description": "Defines what the Proof of Concept is specifically designed to prove, demonstrate, or de-risk.",
+    "purpose": "Establish clear goals and validation criteria for the engagement.",
+    "selection_rules": {
+      "include_when": ["Always included to define bounded validation criteria."],
+      "exclude_when": [],
+      "priority": "high"
+    },
+    "required_information": ["primary_validation_goals"],
+    "optional_information": ["secondary_goals", "hypotheses"],
+    "writing_guidelines": {
+      "tone": "action-oriented and precise",
+      "detail_level": "detailed",
+      "instructions": [
+        "State clear, measurable objectives grounded in the supplied context.",
+        "Do not invent arbitrary numeric targets unless provided by the source.",
+        "Distinguish technical viability goals from business feasibility goals."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "objectives_intro",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Introduce the overarching validation mission."
+      },
+      {
+        "block_id": "objectives_list",
+        "type": "numbered_list",
+        "required": true,
+        "purpose": "Ordered list of primary objectives."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default"
+    },
+    "ordering": {
+      "preferred_after": ["business_need"],
+      "preferred_before": ["proposed_solution"]
+    },
+    "tags": ["core", "objectives", "validation"]
+  },
+  {
+    "section_id": "proposed_solution",
+    "title": "Proposed Solution",
+    "category": "core",
+    "description": "Explains the proposed approach, capabilities, and key solution concepts.",
+    "purpose": "Convey the conceptual and functional design addressing the business need.",
+    "selection_rules": {
+      "include_when": ["Always included as the central technical proposal."],
+      "exclude_when": [],
+      "priority": "high"
+    },
+    "required_information": ["proposed_approach", "core_capabilities"],
+    "optional_information": ["architectural_principles", "assumptions"],
+    "writing_guidelines": {
+      "tone": "constructive, technical, and forward-looking",
+      "detail_level": "detailed",
+      "instructions": [
+        "Explain the solution components and how they directly remediate the identified challenges.",
+        "Outline core capabilities in a structured format.",
+        "Clearly flag any foundational assumptions."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "solution_overview",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Explain the overarching solution concept."
+      },
+      {
+        "block_id": "core_features_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Capability", "Description", "Value Delivered"],
+        "purpose": "Structured mapping of capabilities to business value."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["poc_objectives"],
+      "preferred_before": ["poc_scope", "technical_architecture"]
+    },
+    "tags": ["core", "solution", "design"]
+  },
+  {
+    "section_id": "poc_scope",
+    "title": "POC Scope",
+    "category": "core",
+    "description": "Explicitly demarcates what is included within the POC and what is deferred to subsequent phases.",
+    "purpose": "Prevent scope creep and align stakeholder expectations on boundaries.",
+    "selection_rules": {
+      "include_when": ["Always included to delineate project boundaries."],
+      "exclude_when": [],
+      "priority": "high"
+    },
+    "required_information": ["in_scope_items", "out_of_scope_items"],
+    "optional_information": ["future_phase_items"],
+    "writing_guidelines": {
+      "tone": "clear, unambiguous, and firm",
+      "detail_level": "detailed",
+      "instructions": [
+        "Clearly separate In-Scope from Out-of-Scope deliverables.",
+        "Ensure out-of-scope items prevent misunderstandings around full production readiness."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "scope_intro",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Introduce scope boundaries."
+      },
+      {
+        "block_id": "scope_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Area", "In Scope (POC)", "Out of Scope (Post-POC)"],
+        "purpose": "Structured scope boundary comparison."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["proposed_solution"],
+      "preferred_before": ["deliverables_success_criteria"]
+    },
+    "tags": ["core", "scope", "governance"]
+  },
+  {
+    "section_id": "deliverables_success_criteria",
+    "title": "Deliverables & Success Criteria",
+    "category": "core",
+    "description": "Specifies concrete artifacts produced and the acceptance criteria required to judge the POC successful.",
+    "purpose": "Define tangible outputs and unambiguous validation benchmarks.",
+    "selection_rules": {
+      "include_when": ["Always included to define acceptance and handoff requirements."],
+      "exclude_when": [],
+      "priority": "high"
+    },
+    "required_information": ["deliverables", "success_criteria"],
+    "optional_information": ["acceptance_methods", "signoff_stakeholders"],
+    "writing_guidelines": {
+      "tone": "rigorous and measurable",
+      "detail_level": "detailed",
+      "instructions": [
+        "Itemize all tangible artifacts (code, documentation, deployed sandbox, report).",
+        "Define concrete success criteria grounded in the provided requirements.",
+        "Do not invent fabricated percentage thresholds unless supported by context."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "deliverables_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Deliverable", "Format / Type", "Success Verification"],
+        "purpose": "Catalogue of deliverables and verification criteria."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["poc_scope"],
+      "preferred_before": ["conclusion"]
+    },
+    "tags": ["core", "deliverables", "criteria"]
+  },
+  {
+    "section_id": "conclusion",
+    "title": "Conclusion & Next Steps",
+    "category": "core",
+    "description": "Summarizes the POC proposal and establishes immediate next steps for approval and kickoff.",
+    "purpose": "Provide a clean, actionable close to the proposal document.",
+    "selection_rules": {
+      "include_when": ["Standard closing section for POC proposals."],
+      "exclude_when": [],
+      "priority": "medium"
+    },
+    "required_information": ["next_steps"],
+    "optional_information": ["kickoff_prerequisites", "contact_info"],
+    "writing_guidelines": {
+      "tone": "collaborative and forward-looking",
+      "detail_level": "concise",
+      "instructions": [
+        "Reiterate the value and feasibility demonstrated by the proposed plan.",
+        "List concrete next steps required to commence engagement.",
+        "Do not introduce new technical claims or surprise dependencies."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "conclusion_text",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Concluding summary."
+      },
+      {
+        "block_id": "next_steps_list",
+        "type": "numbered_list",
+        "required": true,
+        "purpose": "Sequential steps to kickoff."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default"
+    },
+    "ordering": {
+      "preferred_after": ["deliverables_success_criteria"]
+    },
+    "tags": ["core", "conclusion", "next_steps"]
+  }
+]

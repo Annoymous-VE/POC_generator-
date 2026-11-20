@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "document": {
+    "title": "AI Customer Support Automation POC",
+    "subtitle": "Proof of Concept Proposal",
+    "client_name": "Acme Corp",
+    "prepared_by": "Solutions Team",
+    "version": "1.0",
+    "date": "2026-11-20",
+    "language": "en",
+    "design_profile": "corporate_blue"
+  },
+  "planning_summary": {
+    "project_type": "AI automation",
+    "selection_rationale": "The project requires automated intent classification and RAG pipeline evaluation."
+  },
+  "selected_sections": [
+    {
+      "section_id": "executive_summary",
+      "title": "Executive Summary",
+      "order": 1,
+      "selection_reason": "Mandatory high-level overview for stakeholders."
+    },
+    {
+      "section_id": "technical_architecture",
+      "title": "Technical Architecture",
+      "order": 2,
+      "selection_reason": "Multiple cloud components and model gateway."
+    }
+  ],
+  "excluded_sections": [
+    {
+      "section_id": "data_migration",
+      "reason": "Existing database is not being migrated."
+    }
+  ],
+  "missing_information": [
+    "Target daily concurrent request volume not specified"
+  ],
+  "assumptions": [
+    "Client will provision Azure OpenAI tenant and credentials"
+  ]
+}

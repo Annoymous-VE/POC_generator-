@@ -1,0 +1,59 @@
+{
+  "profile_id": "corporate_blue",
+  "name": "Corporate Blue",
+  "version": "1.0.0",
+  "palette": {
+    "primary_navy": "#17365D",
+    "corporate_blue": "#365F91",
+    "secondary_blue": "#2F75B5",
+    "light_blue": "#4F81BD",
+    "teal_accent": "#0F6B78",
+    "body_text": "#202B36",
+    "muted_text": "#666666",
+    "page_background": "#FFFFFF"
+  },
+  "page_layout": {
+    "page_size": "A4",
+    "orientation": "portrait",
+    "top_margin_in": 0.65,
+    "bottom_margin_in": 0.65,
+    "left_margin_in": 0.65,
+    "right_margin_in": 0.65
+  },
+  "typography": {
+    "cover_title": {
+      "font": "Aptos Display",
+      "size_pt": 26.0,
+      "color": "#17365D",
+      "weight": "bold",
+      "space_after_pt": 12.0
+    },
+    "heading_1": {
+      "font": "Aptos",
+      "size_pt": 16.0,
+      "color": "#17365D",
+      "weight": "bold",
+      "space_before_pt": 18.0,
+      "space_after_pt": 8.0
+    },
+    "body_default": {
+      "font": "Aptos",
+      "size_pt": 10.0,
+      "color": "#202B36",
+      "weight": "regular",
+      "line_spacing": 1.15,
+      "space_after_pt": 6.0
+    }
+  },
+  "table_styles": {
+    "standard_table": {
+      "header_background_color": "#17365D",
+      "header_text_color": "#FFFFFF",
+      "header_font_weight": "bold",
+      "border_color": "#D3D3D3",
+      "border_width_pt": 0.5,
+      "cell_padding_pt": 6.0,
+      "alternating_row_color": "#F9FAFB"
+    }
+  }
+}

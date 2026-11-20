@@ -1,0 +1,86 @@
+{
+  "section_id": "technical_architecture",
+  "title": "Technical Architecture",
+  "category": "conditional",
+  "description": "Explains the proposed solution's major technical components and their relationships.",
+  "purpose": "Give stakeholders a clear understanding of the architecture.",
+  "selection_rules": {
+    "include_when": [
+      "The solution has multiple technical components.",
+      "System integration or infrastructure design is relevant."
+    ],
+    "exclude_when": [
+      "The project is a simple process-only POC with no meaningful technical architecture."
+    ],
+    "priority": "high"
+  },
+  "required_information": [
+    "proposed_components",
+    "component_responsibilities",
+    "system_relationships"
+  ],
+  "optional_information": [
+    "hosting_model",
+    "network_boundaries",
+    "technology_choices"
+  ],
+  "writing_guidelines": {
+    "tone": "professional and technically precise",
+    "detail_level": "detailed",
+    "instructions": [
+      "Explain each major component and its responsibility.",
+      "Describe how components interact.",
+      "Explain technology choices only when supported by the project context.",
+      "Do not invent infrastructure or implementation decisions."
+    ]
+  },
+  "content_structure": [
+    {
+      "block_id": "architecture_overview",
+      "type": "paragraph",
+      "required": true,
+      "purpose": "Introduce the architecture and its main design principles."
+    },
+    {
+      "block_id": "architecture_diagram",
+      "type": "diagram",
+      "required": false,
+      "purpose": "Show major components and their relationships."
+    },
+    {
+      "block_id": "component_table",
+      "type": "table",
+      "required": true,
+      "columns": [
+        "Component",
+        "Responsibility",
+        "Technology"
+      ],
+      "purpose": "Describe the architecture components."
+    }
+  ],
+  "style_reference": {
+    "heading": "heading_1",
+    "body": "body_default",
+    "table": "standard_table",
+    "diagram": "standard_diagram"
+  },
+  "ordering": {
+    "preferred_after": [
+      "proposed_solution"
+    ],
+    "preferred_before": [
+      "poc_scope"
+    ]
+  },
+  "dependencies": [],
+  "overlap_with": [
+    "technology_stack",
+    "data_flow"
+  ],
+  "tags": [
+    "technical",
+    "architecture",
+    "systems"
+  ]
+}

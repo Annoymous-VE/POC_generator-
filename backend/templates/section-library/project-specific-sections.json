@@ -1,0 +1,158 @@
+[
+  {
+    "section_id": "rag_pipeline_design",
+    "title": "RAG Retrieval & Indexing Pipeline",
+    "category": "custom",
+    "description": "Details document chunking, embedding generation, vector indexing, retrieval filtering, and prompt grounding.",
+    "purpose": "Provide in-depth architectural and operational blueprint for Retrieval-Augmented Generation.",
+    "selection_rules": {
+      "include_when": [
+        "The project involves semantic search, vector database retrieval, or knowledge base grounding with an LLM."
+      ],
+      "exclude_when": [
+        "Non-AI projects or standard fine-tuning/prompting without retrieval."
+      ],
+      "priority": "high"
+    },
+    "required_information": ["embedding_model", "vector_database", "chunking_strategy"],
+    "optional_information": ["reranking_model", "top_k_parameter", "metadata_filters"],
+    "writing_guidelines": {
+      "tone": "technically rigorous and algorithmic",
+      "detail_level": "detailed",
+      "instructions": [
+        "Explain document ingestion, chunk size, overlap, and vector embedding strategy.",
+        "Specify the similarity metric and indexing algorithm.",
+        "Detail the context injection and hallucination guardrail mechanisms."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "rag_narrative",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Overview of the retrieval and grounding architecture."
+      },
+      {
+        "block_id": "rag_stages_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Pipeline Stage", "Strategy / Algorithm", "Configuration"],
+        "purpose": "Detailed parameters for chunking, embedding, vector search, and reranking."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["technical_architecture"],
+      "preferred_before": ["data_flow", "security_considerations"]
+    },
+    "tags": ["ai", "rag", "vector_search", "custom"]
+  },
+  {
+    "section_id": "data_migration",
+    "title": "Data Migration Strategy & Reconciliation",
+    "category": "custom",
+    "description": "Outlines source-to-target schema mapping, transformation logic, cutover strategy, and validation checks.",
+    "purpose": "Define how legacy data is extracted, cleaned, migrated, and verified.",
+    "selection_rules": {
+      "include_when": [
+        "The project involves database upgrades, cloud data migration, or legacy data transformation."
+      ],
+      "exclude_when": [
+        "Greenfield applications with no legacy datasets."
+      ],
+      "priority": "high"
+    },
+    "required_information": ["source_database", "target_database", "migration_scope"],
+    "optional_information": ["cutover_window", "rollback_plan"],
+    "writing_guidelines": {
+      "tone": "methodical and data-integrity focused",
+      "detail_level": "detailed",
+      "instructions": [
+        "Document schema mapping and data type transformations.",
+        "Specify validation reconciliation checks (row counts, checksums, foreign key integrity).",
+        "Detail fallback and rollback contingency procedures."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "migration_overview",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "High-level migration strategy."
+      },
+      {
+        "block_id": "migration_phases_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Migration Phase", "Activities", "Validation Gate"],
+        "purpose": "Structured stages for extraction, transformation, load, and verification."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["technical_architecture"],
+      "preferred_before": ["validation_testing", "risks_dependencies"]
+    },
+    "tags": ["data", "migration", "database", "custom"]
+  },
+  {
+    "section_id": "integration_strategy",
+    "title": "System Integration & API Specifications",
+    "category": "custom",
+    "description": "Defines endpoints, protocols, authentication, and payload formats for connecting external systems.",
+    "purpose": "Document integration touchpoints, contracts, and error recovery policies.",
+    "selection_rules": {
+      "include_when": [
+        "The POC must integrate with external ERP, CRM, third-party APIs, or webhooks."
+      ],
+      "exclude_when": [
+        "Self-contained standalone systems with no external API contracts."
+      ],
+      "priority": "medium"
+    },
+    "required_information": ["external_systems", "integration_protocols"],
+    "optional_information": ["rate_limits", "retry_policy"],
+    "writing_guidelines": {
+      "tone": "precise and API-contract focused",
+      "detail_level": "detailed",
+      "instructions": [
+        "Identify each external system and integration protocol (REST, GraphQL, gRPC, Webhooks).",
+        "Describe authentication handshakes and security token lifecycles.",
+        "Define error handling, timeout, and retry circuit breaker rules."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "integration_overview",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Overview of external touchpoints."
+      },
+      {
+        "block_id": "integration_table",
+        "type": "table",
+        "required": true,
+        "columns": ["System / Service", "Protocol", "Auth Method", "Data Exchanged"],
+        "purpose": "Structured matrix of third-party integrations."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["technical_architecture"],
+      "preferred_before": ["security_considerations"]
+    },
+    "tags": ["integration", "api", "systems", "custom"]
+  }
+]

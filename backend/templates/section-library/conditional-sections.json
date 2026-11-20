@@ -1,0 +1,315 @@
+[
+  {
+    "section_id": "technical_architecture",
+    "title": "Technical Architecture",
+    "category": "conditional",
+    "description": "Explains major architectural components, infrastructure layers, and component relationships.",
+    "purpose": "Provide engineering and technical leadership with a clear structural architectural blueprint.",
+    "selection_rules": {
+      "include_when": [
+        "The solution involves multiple technical components, microservices, or cloud infrastructure.",
+        "System integration, model endpoints, or tiered storage are involved."
+      ],
+      "exclude_when": [
+        "Simple process-only or operational workflow POCs with negligible technical architecture."
+      ],
+      "priority": "high"
+    },
+    "required_information": ["proposed_components", "component_responsibilities"],
+    "optional_information": ["hosting_model", "network_boundaries"],
+    "writing_guidelines": {
+      "tone": "architectural and technically precise",
+      "detail_level": "detailed",
+      "instructions": [
+        "Detail each architectural component, its layer, and its single responsibility.",
+        "Include a structured component table.",
+        "Do not invent speculative infrastructure or unapproved services."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "arch_narrative",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Overview of the technical architecture and core patterns."
+      },
+      {
+        "block_id": "arch_diagram",
+        "type": "diagram",
+        "required": false,
+        "diagram_type": "architecture",
+        "purpose": "Visual representation of component hierarchy and boundaries."
+      },
+      {
+        "block_id": "components_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Component", "Layer", "Responsibility", "Key Technology"],
+        "purpose": "Tabular breakdown of components and responsibilities."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table",
+      "diagram": "standard_diagram"
+    },
+    "ordering": {
+      "preferred_after": ["proposed_solution"],
+      "preferred_before": ["technology_stack", "poc_scope"]
+    },
+    "overlap_with": ["technology_stack", "data_flow"],
+    "tags": ["technical", "architecture", "components"]
+  },
+  {
+    "section_id": "technology_stack",
+    "title": "Technology Stack & Rationale",
+    "category": "conditional",
+    "description": "Lists the selected technologies, frameworks, and tools alongside justification for each choice.",
+    "purpose": "Justify technology choices and prove fitness for purpose.",
+    "selection_rules": {
+      "include_when": [
+        "Specific languages, frameworks, cloud services, or AI models are proposed."
+      ],
+      "exclude_when": [
+        "Technology selection is fully predetermined by existing client standards and needs no evaluation."
+      ],
+      "priority": "medium"
+    },
+    "required_information": ["selected_technologies", "selection_rationale"],
+    "optional_information": ["evaluated_alternatives"],
+    "writing_guidelines": {
+      "tone": "objective and evaluative",
+      "detail_level": "detailed",
+      "instructions": [
+        "Present proposed technologies in a structured table.",
+        "Provide solid engineering rationale for each choice.",
+        "Note any client-mandated technology constraints."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "tech_intro",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Contextualize the tech stack principles."
+      },
+      {
+        "block_id": "tech_stack_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Domain", "Technology Choice", "Rationale & Trade-offs"],
+        "purpose": "Structured tech stack table."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["technical_architecture"],
+      "preferred_before": ["data_flow", "poc_scope"]
+    },
+    "overlap_with": ["technical_architecture"],
+    "tags": ["technical", "technologies", "rationale"]
+  },
+  {
+    "section_id": "data_flow",
+    "title": "Data Flow & Processing Lifecycle",
+    "category": "conditional",
+    "description": "Traces the path and transformations of data as it passes through ingestion, processing, and output.",
+    "purpose": "Clarify lifecycle, persistence, state transitions, and formats of data.",
+    "selection_rules": {
+      "include_when": [
+        "Data transformations, pipelines, ingestion, or ETL/ELT flows are central to the POC."
+      ],
+      "exclude_when": [
+        "Projects with simple static UI/CRUD and trivial single-database queries."
+      ],
+      "priority": "medium"
+    },
+    "required_information": ["data_inputs", "processing_stages", "data_outputs"],
+    "optional_information": ["retention_policy", "data_formats"],
+    "writing_guidelines": {
+      "tone": "detailed and sequential",
+      "detail_level": "detailed",
+      "instructions": [
+        "Trace data from source ingress through parsing, indexing/transformation, to query or output.",
+        "Specify protocols and storage mechanics wherever grounded in context."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "data_flow_overview",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Overview of the data lifecycle."
+      },
+      {
+        "block_id": "stages_list",
+        "type": "numbered_list",
+        "required": true,
+        "purpose": "Ordered sequence of data processing stages."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default"
+    },
+    "ordering": {
+      "preferred_after": ["technical_architecture"],
+      "preferred_before": ["security_considerations"]
+    },
+    "tags": ["data", "pipeline", "lifecycle"]
+  },
+  {
+    "section_id": "security_considerations",
+    "title": "Security, Privacy & Compliance",
+    "category": "conditional",
+    "description": "Details authentication, access controls, data encryption, and privacy safeguards relevant to the POC.",
+    "purpose": "Ensure security and compliance risks are acknowledged and appropriately bounded.",
+    "selection_rules": {
+      "include_when": [
+        "Sensitive client data, personally identifiable information (PII), or external APIs are used.",
+        "Cloud hosting, auth identity, or compliance boundaries must be articulated."
+      ],
+      "exclude_when": [
+        "Local isolated sandbox POCs with mock public data and no credential dependencies."
+      ],
+      "priority": "high"
+    },
+    "required_information": ["security_controls"],
+    "optional_information": ["encryption_details", "auth_mechanisms"],
+    "writing_guidelines": {
+      "tone": "vigilant, formal, and accurate",
+      "detail_level": "detailed",
+      "instructions": [
+        "Address data in transit and at rest encryption.",
+        "Specify tenant isolation and IAM identity boundaries.",
+        "Highlight unresolved client compliance questions as explicit items."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "security_overview",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Introductory security and isolation posture."
+      },
+      {
+        "block_id": "security_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Security Domain", "POC Safeguard", "Production Requirement"],
+        "purpose": "Table comparing POC safeguards with eventual production requirements."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["data_flow", "technical_architecture"],
+      "preferred_before": ["risks_dependencies"]
+    },
+    "tags": ["security", "compliance", "privacy"]
+  },
+  {
+    "section_id": "risks_dependencies",
+    "title": "Risks, Assumptions & Dependencies",
+    "category": "conditional",
+    "description": "Identifies technical, operational, and prerequisite dependencies alongside mitigation strategies.",
+    "purpose": "De-risk delivery and record dependencies on client resources or external APIs.",
+    "selection_rules": {
+      "include_when": [
+        "Material technical risks, third-party API dependencies, or client provisioning prerequisites exist."
+      ],
+      "exclude_when": [],
+      "priority": "high"
+    },
+    "required_information": ["identified_risks", "critical_dependencies"],
+    "optional_information": ["mitigation_strategies"],
+    "writing_guidelines": {
+      "tone": "pragmatic, transparent, and risk-aware",
+      "detail_level": "detailed",
+      "instructions": [
+        "Identify specific risks and their operational impact.",
+        "Provide concrete mitigations for each risk.",
+        "Explicitly list all required client-provided access and sample datasets."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "risks_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Risk / Dependency", "Impact", "Mitigation Strategy", "Owner"],
+        "purpose": "Comprehensive risk matrix."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["security_considerations", "poc_scope"],
+      "preferred_before": ["timeline", "conclusion"]
+    },
+    "tags": ["governance", "risks", "dependencies"]
+  },
+  {
+    "section_id": "timeline",
+    "title": "Indicative Delivery Timeline",
+    "category": "conditional",
+    "description": "Outlines delivery phases, sprint milestones, and sequential execution blocks.",
+    "purpose": "Provide a time horizon and staging for the POC execution.",
+    "selection_rules": {
+      "include_when": [
+        "Project has stated duration, sprints, or multi-stage delivery milestones."
+      ],
+      "exclude_when": [
+        "Timeframe is entirely unknown or deliberately omitted at the proposal stage."
+      ],
+      "priority": "medium"
+    },
+    "required_information": ["delivery_phases"],
+    "optional_information": ["phase_durations", "milestones"],
+    "writing_guidelines": {
+      "tone": "structured and milestone-focused",
+      "detail_level": "detailed",
+      "instructions": [
+        "Organize the timeline into clear chronological phases.",
+        "State inputs and key outputs for each milestone.",
+        "Do not invent fixed calendar dates unless supplied in context."
+      ]
+    },
+    "content_structure": [
+      {
+        "block_id": "timeline_intro",
+        "type": "paragraph",
+        "required": true,
+        "purpose": "Timeline overview."
+      },
+      {
+        "block_id": "milestones_table",
+        "type": "table",
+        "required": true,
+        "columns": ["Phase", "Duration", "Key Activities", "Milestone Output"],
+        "purpose": "Timeline phase schedule."
+      }
+    ],
+    "style_reference": {
+      "heading": "heading_1",
+      "body": "body_default",
+      "table": "standard_table"
+    },
+    "ordering": {
+      "preferred_after": ["risks_dependencies", "poc_scope"],
+      "preferred_before": ["conclusion"]
+    },
+    "tags": ["delivery", "timeline", "milestones"]
+  }
+]
